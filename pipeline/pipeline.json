@@ -1,0 +1,180 @@
+{
+	"name": "pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "AzureDatabricksDeltaLakeSink",
+						"importSettings": {
+							"type": "AzureDatabricksDeltaLakeImportCommand"
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage",
+							"type": "LinkedServiceReference"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CUST_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_CODE",
+									"type": "string"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_NAME",
+									"type": "string"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_CITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_CITY",
+									"type": "string"
+								}
+							},
+							{
+								"source": {
+									"name": "WORKING_AREA",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WORKING_AREA",
+									"type": "string"
+								}
+							},
+							{
+								"source": {
+									"name": "CUST_COUNTRY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUST_COUNTRY",
+									"type": "string"
+								}
+							},
+							{
+								"source": {
+									"name": "GRADE",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GRADE",
+									"type": "Int"
+								}
+							},
+							{
+								"source": {
+									"name": "OPENING_AMT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "OPENING_AMT",
+									"type": "Int"
+								}
+							},
+							{
+								"source": {
+									"name": "RECEIVE_AMT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RECEIVE_AMT",
+									"type": "Int"
+								}
+							},
+							{
+								"source": {
+									"name": "PAYMENT_AMT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PAYMENT_AMT",
+									"type": "Int"
+								}
+							},
+							{
+								"source": {
+									"name": "OUTSTANDING_AMT",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "OUTSTANDING_AMT",
+									"type": "Int"
+								}
+							},
+							{
+								"source": {
+									"name": "PHONE_NO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PHONE_NO",
+									"type": "string"
+								}
+							},
+							{
+								"source": {
+									"name": "AGENT_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AGENT_CODE",
+									"type": "string"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerCopyTest",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureDatabricksDeltaLakeDataset1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-07-27T20:11:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

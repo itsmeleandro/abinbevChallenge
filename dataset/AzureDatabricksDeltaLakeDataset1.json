@@ -1,0 +1,66 @@
+{
+	"name": "AzureDatabricksDeltaLakeDataset1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDatabricksDeltaLake1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLakeDataset",
+		"typeProperties": {
+			"database": "default",
+			"table": "customer"
+		},
+		"schema": [
+			{
+				"name": "CUST_CODE",
+				"type": "string"
+			},
+			{
+				"name": "CUST_NAME",
+				"type": "string"
+			},
+			{
+				"name": "CUST_CITY",
+				"type": "string"
+			},
+			{
+				"name": "WORKING_AREA",
+				"type": "string"
+			},
+			{
+				"name": "CUST_COUNTRY",
+				"type": "string"
+			},
+			{
+				"name": "GRADE",
+				"type": "integer"
+			},
+			{
+				"name": "OPENING_AMT",
+				"type": "integer"
+			},
+			{
+				"name": "RECEIVE_AMT",
+				"type": "integer"
+			},
+			{
+				"name": "PAYMENT_AMT",
+				"type": "integer"
+			},
+			{
+				"name": "OUTSTANDING_AMT",
+				"type": "integer"
+			},
+			{
+				"name": "PHONE_NO",
+				"type": "string"
+			},
+			{
+				"name": "AGENT_CODE",
+				"type": "string"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

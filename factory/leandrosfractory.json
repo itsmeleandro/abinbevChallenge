@@ -1,0 +1,9 @@
+{
+	"name": "leandrosfractory",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "331330dc-a988-49a8-8a14-1c3a0bd195cb",
+		"tenantId": "ca1d08b0-9543-4bd9-8718-42becddc7786"
+	}
+}

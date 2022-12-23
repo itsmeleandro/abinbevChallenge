@@ -1,0 +1,62 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SqlServerCopyTest",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"linkedService": {
+						"referenceName": "AzureBlobStorage",
+						"type": "LinkedServiceReference"
+					},
+					"name": "todelta"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          CUST_CODE as string,",
+				"          CUST_NAME as string,",
+				"          CUST_CITY as string,",
+				"          WORKING_AREA as string,",
+				"          CUST_COUNTRY as string,",
+				"          GRADE as integer,",
+				"          OPENING_AMT as integer,",
+				"          RECEIVE_AMT as integer,",
+				"          PAYMENT_AMT as integer,",
+				"          OUTSTANDING_AMT as integer,",
+				"          PHONE_NO as string,",
+				"          AGENT_CODE as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     format: 'delta',",
+				"     container: 'containerv2',",
+				"     mergeSchema: false,",
+				"     autoCompact: false,",
+				"     optimizedWrite: false,",
+				"     vacuum: 0,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1) ~> todelta"
+			]
+		}
+	}
+}
