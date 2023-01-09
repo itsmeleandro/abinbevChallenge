@@ -7,6 +7,9 @@
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": "TPCDS_SF100TCL"
+		}
 	}
 }
