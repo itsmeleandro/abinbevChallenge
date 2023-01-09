@@ -5,12 +5,17 @@
 			"referenceName": "AzureBlobStorage",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "testcontainer"
+				"container": "samplecontainer"
 			},
 			"compressionCodec": "snappy"
 		},
