@@ -15,6 +15,10 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": {
+				"value": "snowFlake",
+				"type": "Expression"
+			},
+			"table": {
 				"value": "@dataset().tableName",
 				"type": "Expression"
 			}
