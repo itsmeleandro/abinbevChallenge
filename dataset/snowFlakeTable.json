@@ -15,7 +15,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": {
-				"value": "snowFlake",
+				"value": "TPCDS_SF100TCL",
 				"type": "Expression"
 			},
 			"table": {
