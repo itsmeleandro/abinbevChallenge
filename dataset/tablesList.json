@@ -9,7 +9,8 @@
 		"type": "SnowflakeTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "TPCDS_SF100TCL"
+			"schema": "TPCDS_SF100TCL",
+			"table": ""
 		}
 	}
 }
