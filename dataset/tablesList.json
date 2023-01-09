@@ -1,0 +1,17 @@
+{
+	"name": "tablesList",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SnowflakeExample",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SnowflakeTable",
+		"schema": []
+	}
+}
