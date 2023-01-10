@@ -67,7 +67,7 @@
 										"type": "SnowflakeExportCopyCommand",
 										"additionalCopyOptions": {
 											"SINGLE": "FALSE",
-											"MAX_FILE_SIZE ": "5368709120"
+											"MAX_FILE_SIZE ": "9442450944"
 										}
 									}
 								},
