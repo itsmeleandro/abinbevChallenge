@@ -22,7 +22,7 @@
 				"folderPath": "snowflake",
 				"container": "samplecontainer"
 			},
-			"compressionCodec": "none"
+			"compressionCodec": "snappy"
 		},
 		"schema": []
 	},
