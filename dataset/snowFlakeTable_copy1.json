@@ -1,0 +1,27 @@
+{
+	"name": "snowFlakeTable_copy1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SnowflakeExample",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SnowflakeTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "TPCDS_SF100TCL",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
