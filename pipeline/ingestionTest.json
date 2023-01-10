@@ -16,9 +16,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "SqlServerSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						}
 					},
 					"sink": {
 						"type": "ParquetSink",
@@ -31,10 +34,19 @@
 					},
 					"enableStaging": false
 				},
-				"outputs": [
+				"inputs": [
 					{
 						"referenceName": "Parquet",
 						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Parquet",
+						"type": "DatasetReference",
+						"parameters": {
+							"fileName": "sample"
+						}
 					}
 				]
 			},
