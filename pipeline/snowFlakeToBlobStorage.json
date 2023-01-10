@@ -18,7 +18,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SnowflakeSource",
-						"query": "SELECT TABLE_NAME\nFROM INFORMATION_SCHEMA.TABLES\nWHERE TABLE_SCHEMA = 'TPCDS_SF10TCL'",
+						"query": "SELECT TABLE_NAME\nFROM INFORMATION_SCHEMA.TABLES\nWHERE TABLE_SCHEMA = 'TPCDS_SF100TCL'",
 						"exportSettings": {
 							"type": "SnowflakeExportCopyCommand"
 						}
