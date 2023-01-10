@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "leandrosfractory"
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricksDeltaLake1_accessToken": {
+			"value": ""
+		},
+		"SnowflakeExample_connectionString": {
+			"value": ""
+		},
+		"leandrotest_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage_sasUri": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://leandroKeyvault.vault.azure.net/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://leandroKeyvault.vault.azure.net/"
+		},
+		"storagekey_properties_typeProperties_baseUrl": {
+			"value": "https://leandroKeyvault.vault.azure.net/"
+		}
+	}
+}
